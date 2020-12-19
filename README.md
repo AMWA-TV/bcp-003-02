@@ -1,6 +1,7 @@
 # AMWA BCP-003-02: Authorization in NMOS Systems \[Work In Progress\]
 
-[![Build Status](https://travis-ci.com/AMWA-TV/nmos-authorization-practice?branch=v1.0-dev)](https://travis-ci.com/AMWA-TV/nmos-authorization-practice)
+[![Lint Status](https://github.com/AMWA-TV/nmos-authorization-practice/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/nmos-authorization-practice/actions?query=workflow%3ALint)
+[![Render Status](https://github.com/AMWA-TV/nmos-authorization-practice/workflows/Render/badge.svg)](https://github.com/AMWA-TV/nmos-authorization-practice/actions?query=workflow%3ARender)
 
 This repository contains details of this AMWA Best Current Practice for how to authorize NMOS APIs.
 
