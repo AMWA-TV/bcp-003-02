@@ -10,6 +10,6 @@
 
 ### How does it work?
 
-- Recommends using [AMWA IS-10 Authorization Specification](https://amwa-tv.github.io/nmos-authorization).
+- Recommends using [AMWA IS-10 Authorization Specification](https://specs.amwa.tv/is-10)
   - This specifies how client provides credentials and gets access tokens.
 - Encryption is a prerequisite (see BCP-003-01).
