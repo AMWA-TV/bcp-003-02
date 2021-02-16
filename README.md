@@ -3,7 +3,7 @@
 [![Lint Status](https://github.com/AMWA-TV/nmos-authorization-practice/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/nmos-authorization-practice/actions?query=workflow%3ALint)
 [![Render Status](https://github.com/AMWA-TV/nmos-authorization-practice/workflows/Render/badge.svg)](https://github.com/AMWA-TV/nmos-authorization-practice/actions?query=workflow%3ARender)
 
-[//]: # "INTRO-START"
+<!-- INTRO-START -->
 
 ### What does it do?
 
@@ -21,7 +21,7 @@
   - This specifies how client provides credentials and gets access tokens.
 - Encryption is a prerequisite (see BCP-003-01).
 
-[//]: # "INTRO-END"
+<!-- INTRO-END -->
 
 ## Getting started
 
