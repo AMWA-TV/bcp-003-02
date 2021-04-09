@@ -1,4 +1,4 @@
-# AMWA BCP-003-02: Authorization in NMOS Systems \[Work In Progress\]
+# AMWA BCP-003-02: Authorization in NMOS Systems
 
 [![Lint Status](https://github.com/AMWA-TV/nmos-authorization-practice/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/nmos-authorization-practice/actions?query=workflow%3ALint)
 [![Render Status](https://github.com/AMWA-TV/nmos-authorization-practice/workflows/Render/badge.svg)](https://github.com/AMWA-TV/nmos-authorization-practice/actions?query=workflow%3ARender)
