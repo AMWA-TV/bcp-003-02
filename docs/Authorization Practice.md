@@ -169,9 +169,9 @@ Alternatively, offering read access to all IS-12 device model objects may be giv
 }
 ```
 
-Access to modifying object properties MUST only be given if the token claim includes a write claim with a role path that includes the object.
+Access to modify object properties MUST only be given if the token claim includes a write claim with a role path that includes the object.
 
-Access to invoking object methods MUST only be given if the token claim includes a write claim with a role path that includes the object.
+Access to invoke object methods MUST only be given if the token claim includes a write claim with a role path that includes the object.
 
 The following is a token claim example which offers access to modify properties and invoke methods on the receiver monitor object identified by a role path of 'root.receiver-monitors.monitor-01'.
 
