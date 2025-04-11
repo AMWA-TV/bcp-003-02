@@ -151,7 +151,7 @@ provided the token covers the 'events' scope and includes claims for any Sources
 ### IS-12 - Control Protocol
 
 When connecting to an [IS-12][] WebSocket control endpoint, the JSON Web Token used MUST be validated to ensure it contains a read/write claim
-matching resource role paths. These represent device model role paths and MUST be created by appending [NcObject roles](https://specs.amwa.tv/ms-05-02/latest/docs/NcObject.html) starting with the [root block](https://specs.amwa.tv/ms-05-02/latest/docs/Blocks.html) and using `.` as the delimiter. Consequently the `.` character MUST not be used inside individual object roles.
+matching resource role paths. These represent device model role paths and MUST be created by appending [NcObject roles](https://specs.amwa.tv/ms-05-02/latest/docs/NcObject.html) starting with the [root block](https://specs.amwa.tv/ms-05-02/latest/docs/Blocks.html) and using `.` as the delimiter. Consequently the `.` character MUST NOT be used inside individual object roles.
 
 For example, offering read access to the IS-12 receiver monitor object identified by a role path of 'root.receiver-monitors.monitor-01' only would require the following token claim.
 
