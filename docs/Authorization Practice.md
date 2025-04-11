@@ -148,6 +148,48 @@ Alternatively, access to all IS-07 Source IDs may be requested with a token clai
 Specific token claims are not required in order to send IS-07 WebSocket commands such as 'subscription' and 'health',
 provided the token covers the 'events' scope and includes claims for any Sources which are being requested.
 
+### IS-12 - Control Protocol
+
+When connecting to an [IS-12][] WebSocket control endpoint, the JSON Web Token used MUST be validated to ensure it contains a read/write claim
+matching resource role paths. These represent device model role paths and MUST be created by appending [NcObject roles](https://specs.amwa.tv/ms-05-02/latest/docs/NcObject.html) starting with the [root block](https://specs.amwa.tv/ms-05-02/latest/docs/Blocks.html) and using `.` as the delimiter. Consequently the `.` character MUST not be used inside individual object roles.
+
+For example, offering read access to the IS-12 receiver monitor object identified by a role path of 'root.receiver-monitors.monitor-01' only would require the following token claim.
+
+```
+"x-nmos-control": {
+  "read": ["root.receiver-monitors.monitor-01"]
+}
+```
+
+Alternatively, offering read access to all IS-12 device model objects may be given with the following token claim which uses the wildcard '*'.
+
+```
+"x-nmos-control": {
+  "read": ["root.*"]
+}
+```
+
+Access to modifying object properties MUST only be given if the token claim includes a write claim with a role path that includes the object.
+
+Access to invoking object methods MUST only be given if the token claim includes a write claim with a role path that includes the object.
+
+The following is a token claim example which offers access to modify properties and invoke methods on the receiver monitor object identified by a role path of 'root.receiver-monitors.monitor-01'.
+
+```
+"x-nmos-control": {
+  "read": ["root.receiver-monitors.monitor-01"],
+  "write": ["root.receiver-monitors.monitor-01"]
+}
+```
+
+The following is a token claim example which uses the wildcard '*' and offers access to modify properties and invoke methods on any device model object.
+
+```
+"x-nmos-control": {
+  "read": ["root.*"],
+  "write": ["root.*"]
+}
+```
 
 [IS-10]: https://specs.amwa.tv/is-10 "AMWA IS-10 NMOS Authorization Specification"
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs to Indicate Requirement Levels"
@@ -155,3 +197,4 @@ provided the token covers the 'events' scope and includes claims for any Sources
 [IS-04 Registry]: https://specs.amwa.tv/is-04 "AMWA IS-04 NMOS Discovery and Registration Specification"
 [IS-04 Referential Integrity]: https://specs.amwa.tv/is-04/v1.3/docs/4.1._Behaviour_-_Registration.html#referential-integrity "AMWA IS-04 Resource Referential Integrity"
 [IS-07]: https://specs.amwa.tv/is-07 "AMWA IS-07 NMOS Event and Tally Specification"
+[IS-12]: https://specs.amwa.tv/is-12 "AMWA IS-12 NMOS Control Protocol"
