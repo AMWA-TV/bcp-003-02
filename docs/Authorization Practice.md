@@ -254,6 +254,8 @@ A token claim could also offer asymmetrical access like in the following example
 }
 ```
 
+Note that PATCH requests against URLs ending in `/bulkProperties` do not require write access as they do not make modifications to the device model and are only used for validation purposes.
+
 [IS-10]: https://specs.amwa.tv/is-10 "AMWA IS-10 NMOS Authorization Specification"
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs to Indicate Requirement Levels"
 [RFC-6750]: https://tools.ietf.org/html/rfc6750 "The OAuth 2.0 Authorization Framework: Bearer Token Usage"
