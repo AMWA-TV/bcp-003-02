@@ -191,6 +191,14 @@ The following is a token claim example which uses the wildcard '*' and offers ac
 }
 ```
 
+A token claim could also offer asymmetrical access like in the following example which only allows write access to a specific path, whilst allowing the entire device model to be read.
+
+```
+"x-nmos-control": {
+  "read": ["root.*"],
+  "write": ["root.receiver-monitors.monitor-01"]
+}
+```
 [IS-10]: https://specs.amwa.tv/is-10 "AMWA IS-10 NMOS Authorization Specification"
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs to Indicate Requirement Levels"
 [RFC-6750]: https://tools.ietf.org/html/rfc6750 "The OAuth 2.0 Authorization Framework: Bearer Token Usage"
