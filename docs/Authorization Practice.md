@@ -202,6 +202,58 @@ A token claim could also offer asymmetrical access like in the following example
 
 Devices MUST only allow subscriptions for objects which are associated with a role path that has been deemed to have read access through a token claim as shown in previous examples.
 
+### IS-14 - Device Configuration
+
+When processing requests sent to an [IS-14][] control endpoint, the JSON Web Token used MUST be validated to ensure it contains a read/write claim
+matching resource role paths. These represent device model role paths and MUST be created by appending [NcObject roles](https://specs.amwa.tv/ms-05-02/latest/docs/NcObject.html) starting with the [root block](https://specs.amwa.tv/ms-05-02/latest/docs/Blocks.html) and using `.` as the delimiter. Consequently the `.` character MUST NOT be used inside individual object roles.
+
+For example, offering read access to an IS-14 object identified by a role path of 'root.example-controls.control-01' only would require the following token claim.
+
+```
+"x-nmos-control": {
+  "read": ["root.example-controls.control-01"]
+}
+```
+
+Alternatively, offering read access to all IS-14 device model objects may be given with the following token claim which uses the wildcard '*'.
+
+```
+"x-nmos-control": {
+  "read": ["root.*"]
+}
+```
+
+Access to modify object properties MUST only be given if the token claim includes a write claim with a role path that includes the object.
+
+Access to invoke object methods MUST only be given if the token claim includes a write claim with a role path that includes the object.
+
+The following is a token claim example which offers access to modify properties and invoke methods on an object identified by a role path of 'root.example-controls.control-01'.
+
+```
+"x-nmos-control": {
+  "read": ["root.example-controls.control-01"],
+  "write": ["root.example-controls.control-01"]
+}
+```
+
+The following is a token claim example which uses the wildcard '*' and offers access to modify properties and invoke methods on any device model object.
+
+```
+"x-nmos-control": {
+  "read": ["root.*"],
+  "write": ["root.*"]
+}
+```
+
+A token claim could also offer asymmetrical access like in the following example which only allows write access to a specific path, whilst allowing the entire device model to be read.
+
+```
+"x-nmos-control": {
+  "read": ["root.*"],
+  "write": ["root.example-controls.control-01"]
+}
+```
+
 [IS-10]: https://specs.amwa.tv/is-10 "AMWA IS-10 NMOS Authorization Specification"
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs to Indicate Requirement Levels"
 [RFC-6750]: https://tools.ietf.org/html/rfc6750 "The OAuth 2.0 Authorization Framework: Bearer Token Usage"
@@ -209,3 +261,4 @@ Devices MUST only allow subscriptions for objects which are associated with a ro
 [IS-04 Referential Integrity]: https://specs.amwa.tv/is-04/v1.3/docs/4.1._Behaviour_-_Registration.html#referential-integrity "AMWA IS-04 Resource Referential Integrity"
 [IS-07]: https://specs.amwa.tv/is-07 "AMWA IS-07 NMOS Event and Tally Specification"
 [IS-12]: https://specs.amwa.tv/is-12 "AMWA IS-12 NMOS Control Protocol"
+[IS-14]: https://specs.amwa.tv/is-14 "AMWA IS-14 NMOS Device Configuration"
