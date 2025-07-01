@@ -156,7 +156,7 @@ matching resource role paths. These represent device model role paths and MUST b
 For example, offering read access to the IS-12 receiver monitor object identified by a role path of 'root.receiver-monitors.monitor-01' only would require the following token claim.
 
 ```
-"x-nmos-control": {
+"x-nmos-ncp": {
   "read": ["root.receiver-monitors.monitor-01"]
 }
 ```
@@ -164,7 +164,7 @@ For example, offering read access to the IS-12 receiver monitor object identifie
 Alternatively, offering read access to all IS-12 device model objects may be given with the following token claim which uses the wildcard '*'.
 
 ```
-"x-nmos-control": {
+"x-nmos-ncp": {
   "read": ["root.*"]
 }
 ```
@@ -176,7 +176,7 @@ Access to invoke object methods MUST only be given if the token claim includes a
 The following is a token claim example which offers access to modify properties and invoke methods on the receiver monitor object identified by a role path of 'root.receiver-monitors.monitor-01'.
 
 ```
-"x-nmos-control": {
+"x-nmos-ncp": {
   "read": ["root.receiver-monitors.monitor-01"],
   "write": ["root.receiver-monitors.monitor-01"]
 }
@@ -185,7 +185,7 @@ The following is a token claim example which offers access to modify properties 
 The following is a token claim example which uses the wildcard '*' and offers access to modify properties and invoke methods on any device model object.
 
 ```
-"x-nmos-control": {
+"x-nmos-ncp": {
   "read": ["root.*"],
   "write": ["root.*"]
 }
@@ -194,7 +194,7 @@ The following is a token claim example which uses the wildcard '*' and offers ac
 A token claim could also offer asymmetrical access like in the following example which only allows write access to a specific path, whilst allowing the entire device model to be read.
 
 ```
-"x-nmos-control": {
+"x-nmos-ncp": {
   "read": ["root.*"],
   "write": ["root.receiver-monitors.monitor-01"]
 }
@@ -210,7 +210,7 @@ matching resource role paths. These represent device model role paths and MUST b
 For example, offering read access to an IS-14 object identified by a role path of 'root.example-controls.control-01' only would require the following token claim.
 
 ```
-"x-nmos-control": {
+"x-nmos-configuration": {
   "read": ["root.example-controls.control-01"]
 }
 ```
@@ -218,7 +218,7 @@ For example, offering read access to an IS-14 object identified by a role path o
 Alternatively, offering read access to all IS-14 device model objects may be given with the following token claim which uses the wildcard '*'.
 
 ```
-"x-nmos-control": {
+"x-nmos-configuration": {
   "read": ["root.*"]
 }
 ```
@@ -230,7 +230,7 @@ Access to invoke object methods MUST only be given if the token claim includes a
 The following is a token claim example which offers access to modify properties and invoke methods on an object identified by a role path of 'root.example-controls.control-01'.
 
 ```
-"x-nmos-control": {
+"x-nmos-configuration": {
   "read": ["root.example-controls.control-01"],
   "write": ["root.example-controls.control-01"]
 }
@@ -239,7 +239,7 @@ The following is a token claim example which offers access to modify properties 
 The following is a token claim example which uses the wildcard '*' and offers access to modify properties and invoke methods on any device model object.
 
 ```
-"x-nmos-control": {
+"x-nmos-configuration": {
   "read": ["root.*"],
   "write": ["root.*"]
 }
@@ -248,7 +248,7 @@ The following is a token claim example which uses the wildcard '*' and offers ac
 A token claim could also offer asymmetrical access like in the following example which only allows write access to a specific path, whilst allowing the entire device model to be read.
 
 ```
-"x-nmos-control": {
+"x-nmos-configuration": {
   "read": ["root.*"],
   "write": ["root.example-controls.control-01"]
 }
