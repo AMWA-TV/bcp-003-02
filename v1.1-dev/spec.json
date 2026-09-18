@@ -1,0 +1,29 @@
+{
+  "amwa_id": "BCP-003-02",
+  "url": "https://specs.amwa.tv/bcp-003-02",
+  "name": "Authorization in NMOS Systems",
+  "status": "AMWA Specification",
+  "repo_name": "bcp-003-02",
+  "alt_repo_name": "nmos-authorization-practice",
+  "repo_url": "https://github.com/AMWA-TV/bcp-003-02",
+  "releases": [
+    "v1.0.0"
+  ],
+  "default_branch": "v1.0.x",
+  "show_in_index": true,
+  "intro": {
+    "what_does_it_do": [
+      "Documents best practice for an API server to accept or reject requests depending on what a client is authorized to do."
+    ],
+    "why_does_it_matter": [
+      "A secure control plane is essential.",
+      "Authorization limits what clients can do to what is allowed.",
+      "These recommendations allow interoperability using widely adopted open technologies."
+    ],
+    "how_does_it_work": [
+      "Recommends using [AMWA IS-10 Authorization Specification](https://specs.amwa.tv/is-10)",
+      "This specifies how client provides credentials and gets access tokens.",
+      "Encryption is a prerequisite (see BCP-003-01)."
+    ]
+  }
+}
